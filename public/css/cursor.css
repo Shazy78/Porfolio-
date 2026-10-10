@@ -1,0 +1,92 @@
+/* ══════════════════════════════════
+   PREMIUM CUSTOM CURSOR
+   Magnetic · Reactive · Layered
+   ══════════════════════════════════ */
+
+*, *::before, *::after { cursor: none !important; }
+
+#cursor-dot {
+    position: fixed;
+    width: 6px; height: 6px;
+    background: #00e5c7;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                height 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                background 0.25s ease,
+                opacity 0.2s ease;
+    will-change: transform, width, height;
+    mix-blend-mode: difference;
+}
+
+#cursor-ring {
+    position: fixed;
+    width: 40px; height: 40px;
+    border: 1.5px solid rgba(0, 229, 199, 0.35);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
+    transform: translate(-50%, -50%);
+    transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                height 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.3s ease,
+                opacity 0.3s ease,
+                background 0.3s ease;
+    will-change: transform, width, height;
+    backdrop-filter: blur(1px);
+}
+
+/* ── Hover State — Interactive Elements ── */
+body.cursor-hover #cursor-dot {
+    width: 10px; height: 10px;
+    background: #fff;
+    box-shadow: 0 0 12px rgba(0, 229, 199, 0.4);
+}
+
+body.cursor-hover #cursor-ring {
+    width: 56px; height: 56px;
+    border-color: rgba(0, 229, 199, 0.6);
+    background: rgba(0, 229, 199, 0.04);
+    box-shadow: 0 0 20px rgba(0, 229, 199, 0.12);
+}
+
+/* ── Click State ── */
+body.cursor-click #cursor-dot {
+    transform: translate(-50%, -50%) scale(0.5);
+}
+body.cursor-click #cursor-ring {
+    transform: translate(-50%, -50%) scale(0.8);
+    border-color: #00e5c7;
+    box-shadow: 0 0 24px rgba(0, 229, 199, 0.25);
+}
+
+/* ── Text/Input hover — subtle expand ── */
+body.cursor-text #cursor-dot {
+    width: 2px; height: 24px; border-radius: 2px;
+    background: rgba(0, 229, 199, 0.8);
+}
+body.cursor-text #cursor-ring {
+    width: 0; height: 0; opacity: 0;
+}
+
+/* ── Light Mode adjustments ── */
+html.light-mode #cursor-dot { background: #009e8b; }
+html.light-mode #cursor-ring { border-color: rgba(0, 158, 139, 0.3); }
+html.light-mode body.cursor-hover #cursor-dot { background: #0f1320; box-shadow: none; }
+html.light-mode body.cursor-hover #cursor-ring {
+    border-color: rgba(0, 158, 139, 0.5);
+    background: rgba(0, 158, 139, 0.04);
+}
+
+/* ── Hide on touch / mobile ── */
+@media (hover: none), (pointer: coarse) {
+    #cursor-dot, #cursor-ring { display: none !important; }
+    *, *::before, *::after { cursor: auto !important; }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+    #cursor-dot, #cursor-ring { transition: none !important; }
+}

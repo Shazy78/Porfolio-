@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shahzad Khan — Full Stack Developer | AI Engineer | Content Writer & Copywriter. Building Ideas into Reality with clean code and creative thinking.">
+    <meta name="author" content="Shahzad Khan">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shahzad Khan | Full Stack Developer & AI Engineer">
+    <meta property="og:description" content="Full Stack Developer | AI Engineer | Content Writer & Copywriter | Building Ideas into Reality 🚀">
+    <meta property="og:image" content="images/profile.jpg">
+    <title>Shahzad Khan | Full Stack Developer & AI Engineer</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cursor.css">
+</head>
+<body>
+
+<!-- ── Preloader ── -->
+<div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-logo">SK.</div>
+</div>
+
+<!-- ── Custom Cursor ── -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- ── Atmospheric Background ── -->
+<div class="atmosphere" aria-hidden="true"></div>
+
+<!-- ── Floating Geometry ── -->
+<div class="geo-shapes" aria-hidden="true">
+    <div class="geo-shape geo-shape--1"></div>
+    <div class="geo-shape geo-shape--2"></div>
+    <div class="geo-shape geo-shape--3"></div>
+</div>
+
+<!-- ── Particle Canvas ── -->
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════ -->
+<header class="header" id="header">
+    <nav class="navbar container" aria-label="Main navigation">
+        <a href="#home" class="logo">SK.</a>
+        <div class="menu-toggle" id="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <ul class="nav-list" id="nav-list">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#showcase" class="nav-link">AI &amp; Copywriting</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li>
+                <button class="nav-link" id="theme-toggle" aria-label="Toggle Dark/Light Mode" style="background:transparent;border:none;cursor:pointer;font-size:16px;"><i class="fas fa-sun"></i></button>
+            </li>
+            <li><a href="js/resume.pdf" download class="btn btn-resume"><i class="fas fa-download"></i> Resume</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════
+     HERO
+     ══════════════════════════════════ -->
+<section id="home" class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <div class="hero-eyebrow gs-reveal hero-layer-1">
+                <span class="dot"></span> Open to opportunities
+            </div>
+            <h1 class="hero-title gs-reveal hero-layer-1">
+                Hi, I'm<br><span class="grad">Shahzad Khan</span>
+            </h1>
+            <p class="hero-role gs-reveal hero-layer-2">
+                <span class="role-prefix">Specialist in </span>
+                <span id="typing-text" class="typing-highlight">Full Stack Development</span><span class="typing-cursor">|</span>
+            </p>
+            <p class="hero-desc gs-reveal hero-layer-3">
+                Building Ideas into Reality 🚀 &mdash; Crafting full-stack applications, AI integrations, database architectures, and conversion-focused copy.
+            </p>
+            
+            <!-- ── Interactive Code & AI Playground Widget ── -->
+            <div class="hero-terminal gs-reveal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="t-dot dot-red"></span>
+                        <span class="t-dot dot-yellow"></span>
+                        <span class="t-dot dot-green"></span>
+                    </div>
+                    <div class="terminal-title">shahzad@dev-station:~</div>
+                    <div class="terminal-tabs">
+                        <button class="terminal-tab active" data-tab="ai"><i class="fas fa-brain"></i> AI Pipeline</button>
+                        <button class="terminal-tab" data-tab="fullstack"><i class="fas fa-code"></i> Full Stack</button>
+                        <button class="terminal-tab" data-tab="copywriting"><i class="fas fa-pen-fancy"></i> Copywriting</button>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-pane active" id="tab-ai">
+                        <pre><code><span class="c-keyword">import</span> { OpenAI } <span class="c-keyword">from</span> <span class="c-str">'@openai/sdk'</span>;
+<span class="c-comment">// RAG Pipeline &amp; Prompt Engineering Agent</span>
+<span class="c-keyword">const</span> aiAgent = <span class="c-keyword">new</span> OpenAI({ apiKey: process.env.OPENAI_KEY });
+<span class="c-keyword">const</span> response = <span class="c-keyword">await</span> aiAgent.chat.completions.create({
+  model: <span class="c-str">'gpt-4o'</span>,
+  messages: [{ role: <span class="c-str">'user'</span>, content: <span class="c-str">'Deploy Intelligent Product Assistant'</span> }]
+});
+<span class="c-output">&#10004; Status: 200 OK — AI Agent Ready &amp; Synchronized.</span></code></pre>
+                    </div>
+                    <div class="terminal-pane" id="tab-fullstack">
+                        <pre><code><span class="c-keyword">const</span> express = <span class="c-keyword">require</span>(<span class="c-str">'express'</span>);
+<span class="c-keyword">const</span> app = express();
+<span class="c-comment">// Scalable Backend &amp; Relational SQL Database</span>
+app.get(<span class="c-str">'/api/v1/solutions'</span>, <span class="c-keyword">async</span> (req, res) => {
+  <span class="c-keyword">const</span> result = <span class="c-keyword">await</span> db.query(<span class="c-str">'SELECT * FROM systems WHERE active = true'</span>);
+  res.json({ success: <span class="c-keyword">true</span>, latency: <span class="c-str">'12ms'</span>, data: result });
+});
+<span class="c-output">&#10004; Express Server Running on Port 5000 (Database Connected)</span></code></pre>
+                    </div>
+                    <div class="terminal-pane" id="tab-copywriting">
+                        <pre><code><span class="c-comment">/* Conversion Copy &amp; Technical Writing Framework */</span>
+<span class="c-keyword">Headline:</span> <span class="c-str">"Transforming Complex Ideas Into High-Impact Software"</span>
+<span class="c-keyword">Value Prop:</span> <span class="c-str">"Clean backend code meets persuasion-driven copywriting."</span>
+<span class="c-keyword">CTA:</span> <span class="c-str">"Scale Your Digital Product With Confidence 🚀"</span>
+<span class="c-output">&#10004; Result: Organic Traffic +65% | Conversion Rate Lift +42%</span></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-stats gs-reveal">
+                <div class="stat-item"><span class="stat-num" data-count="2">0</span><span class="stat-label">Years Experience</span></div>
+                <div class="stat-item"><span class="stat-num" data-count="12">0</span><span class="stat-label">Projects Built</span></div>
+                <div class="stat-item"><span class="stat-num" data-count="4">0</span><span class="stat-label">Certifications</span></div>
+            </div>
+            <div class="hero-cta gs-reveal">
+                <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
+                <a href="js/resume.pdf" download class="btn btn-outline"><i class="fas fa-download"></i> Download CV</a>
+            </div>
+            <div class="hero-socials gs-reveal">
+                <a href="https://www.linkedin.com/in/shahzad-khan-651a12398/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:shehzad686119@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="hero-img">
+            <div class="hero-img-frame gs-reveal">
+                <div class="hero-img-inner">
+                    <img src="images/profile.jpg" alt="Shahzad Khan" loading="eager">
+                </div>
+                <div class="hero-badge"><i class="fas fa-map-marker-alt"></i> Kot Addu, Pakistan</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════
+     ABOUT
+     ══════════════════════════════════ -->
+<section id="about" class="section about">
+    <div class="container">
+        <p class="section-label gs-reveal">Get to know me</p>
+        <h2 class="section-title gs-reveal">About Me</h2>
+        <div class="about-grid">
+            <div class="about-summary gs-reveal">
+                <div class="mini-avatar"><img src="images/profile.jpg" alt="Shahzad Khan"></div>
+                <h3>Professional Summary</h3>
+                <p>I am a results-driven <strong>Full Stack Developer &amp; AI Engineer</strong> with a strong track record of crafting efficient web solutions, intelligent AI workflows, and high-performance backend systems. My technical foundation spans modern frontend engineering, database optimization, and cloud services.</p>
+                <p>Beyond the code, I thrive on <strong>content creation and communication</strong>, bridging the gap between technical complexity and user understanding.</p>
+                <a href="js/resume.pdf" download class="about-resume-btn"><i class="fas fa-file-arrow-down"></i> Download My Resume</a>
+                <div class="about-socials">
+                    <a href="https://www.linkedin.com/in/shahzad-khan-651a12398/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:shehzad686119@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="about-education gs-reveal">
+                <h3>Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="timeline-content">
+                            <h4>BS Computer Science</h4>
+                            <span class="timeline-date">2024 – Present</span>
+                            <p class="timeline-school">COMSATS University Islamabad</p>
+                            <p class="timeline-desc">Focusing on Algorithms, Data Structures, and Software Engineering.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                        <div class="timeline-content">
+                            <h4>FSC Pre-Engineering</h4>
+                            <span class="timeline-date">Completed 2020</span>
+                            <p class="timeline-school">Superior College Pakistan</p>
+                            <p class="timeline-desc">Foundation in Mathematics, Physics, and analytical problem solving.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════
+     EXPERIENCE
+     ══════════════════════════════════ -->
+<section id="experience" class="section experience">
+    <div class="container">
+        <p class="section-label gs-reveal">Work History</p>
+        <h2 class="section-title gs-reveal">Professional Experience</h2>
+        
+        <div class="experience-grid">
+            <div class="experience-card gs-reveal" data-tilt>
+                <div class="exp-header">
+                    <div class="exp-badge"><i class="fas fa-briefcase"></i> Verified Experience</div>
+                    <span class="exp-date">7 Jan 2026 – 5 Apr 2026 (3 Months)</span>
+                </div>
+                <div class="exp-body">
+                    <h3 class="exp-role">Junior Web Developer</h3>
+                    <h4 class="exp-company"><i class="fas fa-building"></i> Devsinc (Private) Limited</h4>
+                    <p class="exp-location"><i class="fas fa-map-marker-alt"></i> Lahore, Punjab, Pakistan &bull; Software Development Department</p>
+                    
+                    <ul class="exp-bullets">
+                        <li>Engineered responsive web applications and interactive UI components with modern frontend frameworks.</li>
+                        <li>Implemented robust backend routing and database integrations ensuring performance, stability, and scalability.</li>
+                        <li>Collaborated on software development, web applications, AI &amp; product engineering projects.</li>
+                        <li>Demonstrated high problem-solving capability, clean code practices, and dedication to software engineering standards.</li>
+                    </ul>
+                    
+                    <div class="exp-tags">
+                        <span>Web Development</span>
+                        <span>Responsive UI</span>
+                        <span>Frontend</span>
+                        <span>Backend Integration</span>
+                        <span>Database Management</span>
+                        <span>AI &amp; Product Engineering</span>
+                    </div>
+
+                    <div class="exp-meta">
+                        <span class="cert-ref"><i class="fas fa-certificate"></i> Ref No: HR/EC/2026/0847</span>
+                        <span class="cert-status"><i class="fas fa-check-circle"></i> Official Experience Certificate Issued</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════
+     AI & COPYWRITING SHOWCASE
+     ══════════════════════════════════ -->
+<section id="showcase" class="section showcase">
+    <div class="container">
+        <p class="section-label gs-reveal">Specialized Capabilities</p>
+        <h2 class="section-title gs-reveal">AI &amp; Copywriting Expertise</h2>
+
+        <div class="showcase-grid">
+            <!-- AI Engineering Card -->
+            <div class="showcase-card gs-reveal" data-tilt>
+                <div class="showcase-badge"><i class="fas fa-brain"></i> AI Engineering</div>
+                <h3 class="showcase-title">AI Workflows &amp; LLM Integration</h3>
+                <p class="showcase-text">Designing RAG (Retrieval-Augmented Generation) systems, fine-tuned prompt pipelines, and autonomous AI agents that automate complex business tasks.</p>
+                <ul class="showcase-list">
+                    <li><i class="fas fa-check-circle"></i> OpenAI API &amp; LangChain Agent Workflows</li>
+                    <li><i class="fas fa-check-circle"></i> Vector Search &amp; Knowledge Base Integration</li>
+                    <li><i class="fas fa-check-circle"></i> Context Window Optimization &amp; Prompt Tuning</li>
+                    <li><i class="fas fa-check-circle"></i> AI-Powered Web Application Assistants</li>
+                </ul>
+                <div class="showcase-metrics">
+                    <div class="metric"><span class="m-val">99.4%</span><span class="m-lbl">Prompt Accuracy</span></div>
+                    <div class="metric"><span class="m-val">3x</span><span class="m-lbl">Workflow Speedup</span></div>
+                </div>
+            </div>
+
+            <!-- Content & Copywriting Card -->
+            <div class="showcase-card gs-reveal" data-tilt>
+                <div class="showcase-badge violet"><i class="fas fa-pen-nib"></i> Conversion Copywriting</div>
+                <h3 class="showcase-title">Persuasive Messaging &amp; SEO Strategy</h3>
+                <p class="showcase-text">Bridging technical complexity with clear, compelling copy that ranks high on search engines and converts visitors into loyal customers.</p>
+                <ul class="showcase-list">
+                    <li><i class="fas fa-check-circle"></i> High-Converting Landing Page &amp; SaaS Copywriting</li>
+                    <li><i class="fas fa-check-circle"></i> Data-Driven SEO Article &amp; Technical Writing</li>
+                    <li><i class="fas fa-check-circle"></i> Brand Messaging &amp; Product Positioning</li>
+                    <li><i class="fas fa-check-circle"></i> Email Nurture Sequences &amp; Ad Creative</li>
+                </ul>
+                <div class="showcase-metrics">
+                    <div class="metric"><span class="m-val">+65%</span><span class="m-lbl">Organic Traffic Lift</span></div>
+                    <div class="metric"><span class="m-val">40%+</span><span class="m-lbl">CTR Improvement</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════
+     SKILLS
+     ══════════════════════════════════ -->
+<section id="skills" class="section skills">
+    <div class="container">
+        <p class="section-label gs-reveal">What I work with</p>
+        <h2 class="section-title gs-reveal">Skills &amp; Technical Stack</h2>
+
+        <!-- Orbit Ring -->
+        <div class="orbit-container gs-reveal" aria-hidden="true">
+            <div class="orbit-center"><i class="fas fa-microchip"></i></div>
+            <div class="orbit-ring">
+                <span class="orbit-tag" style="top:0;left:50%;transform:translateX(-50%)">AI &amp; LLMs</span>
+                <span class="orbit-tag" style="top:25%;right:0">SQL</span>
+                <span class="orbit-tag" style="bottom:25%;right:0">Node.js</span>
+                <span class="orbit-tag" style="bottom:0;left:50%;transform:translateX(-50%)">JavaScript</span>
+                <span class="orbit-tag" style="bottom:25%;left:0">Java</span>
+                <span class="orbit-tag" style="top:25%;left:0">Copywriting</span>
+            </div>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-card gs-reveal">
+                <div class="skill-header"><div class="tech-icon"><i class="fas fa-brain"></i></div><h3>AI &amp; Product Engineering</h3></div>
+                <div class="skill-tags"><span>OpenAI API</span><span>Prompt Engineering</span><span>RAG Systems</span><span>LangChain</span><span>Vector Databases</span></div>
+            </div>
+            <div class="skill-card gs-reveal">
+                <div class="skill-header"><div class="tech-icon"><i class="fas fa-code"></i></div><h3>Programming Languages</h3></div>
+                <div class="skill-tags"><span>JavaScript (ES6+)</span><span>Java</span><span>SQL</span><span>PHP</span><span>HTML5</span><span>CSS3</span></div>
+            </div>
+            <div class="skill-card gs-reveal">
+                <div class="skill-header"><div class="tech-icon"><i class="fas fa-laptop-code"></i></div><h3>Full Stack Web Dev</h3></div>
+                <div class="skill-tags"><span>Node.js / Express</span><span>PHP Backend</span><span>REST APIs</span><span>WordPress</span><span>Responsive UI</span></div>
+            </div>
+            <div class="skill-card gs-reveal">
+                <div class="skill-header"><div class="tech-icon"><i class="fas fa-database"></i></div><h3>Database Systems</h3></div>
+                <div class="skill-tags"><span>MySQL</span><span>PostgreSQL</span><span>SQL Server</span><span>Schema Normalization</span></div>
+            </div>
+            <div class="skill-card gs-reveal">
+                <div class="skill-header"><div class="tech-icon"><i class="fas fa-pen-fancy"></i></div><h3>Copywriting &amp; SEO</h3></div>
+                <div class="skill-tags"><span>Conversion Copy</span><span>SEO Content</span><span>Brand Messaging</span><span>Technical Docs</span><span>Email Marketing</span></div>
+            </div>
+            <div class="skill-card gs-reveal">
+                <div class="skill-header"><div class="tech-icon"><i class="fas fa-tools"></i></div><h3>Dev Tools &amp; Cloud</h3></div>
+                <div class="skill-tags"><span>Git &amp; GitHub</span><span>IBM Cloud</span><span>VS Code</span><span>Linux Terminal</span><span>Postman</span></div>
+            </div>
+        </div>
+
+        <p class="subsection-label gs-reveal">Professional Certifications</p>
+        <div class="cert-grid">
+            <div class="cert-card gs-reveal"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>OOP in Java Programming</h4><p>Udemy — 2024</p></div></div>
+            <div class="cert-card gs-reveal"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>SQL &amp; Relational Databases 101</h4><p>IBM — 2024</p></div></div>
+            <div class="cert-card gs-reveal"><div class="cert-icon"><i class="fas fa-certificate"></i></div><div class="cert-info"><h4>SQL Learning Course</h4><p>MTF Institute — 2024</p></div></div>
+            <div class="cert-card gs-reveal"><div class="cert-icon"><i class="fas fa-pen-fancy"></i></div><div class="cert-info"><h4>Content Writing &amp; Copywriting</h4><p>Certified Professional — 2024</p></div></div>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════
+     PROJECTS (FILTERABLE + MODAL)
+     ══════════════════════════════════ -->
+<section id="projects" class="section projects">
+    <div class="container">
+        <p class="section-label gs-reveal">What I've built</p>
+        <h2 class="section-title gs-reveal">Featured Projects &amp; Case Studies</h2>
+
+        <!-- Project Category Filter Buttons -->
+        <div class="project-filters gs-reveal">
+            <button class="filter-btn active" data-filter="all">All Work</button>
+            <button class="filter-btn" data-filter="fullstack"><i class="fas fa-layer-group"></i> Full Stack</button>
+            <button class="filter-btn" data-filter="ai"><i class="fas fa-brain"></i> AI &amp; ML</button>
+            <button class="filter-btn" data-filter="copywriting"><i class="fas fa-pen-nib"></i> Copywriting &amp; SEO</button>
+            <button class="filter-btn" data-filter="database"><i class="fas fa-database"></i> Database &amp; Java</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1: AI Content Assistant -->
+            <div class="project-card gs-reveal" data-category="ai" data-tilt>
+                <div class="project-top">
+                    <div class="project-folder"><i class="fas fa-robot"></i></div>
+                    <div class="project-links">
+                        <button class="btn-icon-link view-modal-btn" data-project="1" title="Quick View"><i class="fas fa-eye"></i></button>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub repo"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3 class="project-title">AI Content &amp; Copy Assistant</h3>
+                <div class="project-description">Intelligent web app powered by OpenAI LLM that generates SEO articles, social posts, and product headlines automatically.</div>
+                <div class="project-outcome"><strong>Outcome:</strong> Reduced content creation time by 75% for marketing teams.</div>
+                <ul class="project-tech"><li>Node.js</li><li>OpenAI API</li><li>JavaScript</li><li>REST API</li></ul>
+                <button class="project-details-btn view-modal-btn" data-project="1"><i class="fas fa-arrow-right"></i> View Case Study</button>
+            </div>
+
+            <!-- Project 2: Full Stack Portal -->
+            <div class="project-card gs-reveal" data-category="fullstack" data-tilt>
+                <div class="project-top">
+                    <div class="project-folder"><i class="fas fa-server"></i></div>
+                    <div class="project-links">
+                        <button class="btn-icon-link view-modal-btn" data-project="2" title="Quick View"><i class="fas fa-eye"></i></button>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub repo"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3 class="project-title">Enterprise Full-Stack Web Portal</h3>
+                <div class="project-description">Dynamic web management application with role-based auth, admin dashboard, and scalable relational database.</div>
+                <div class="project-outcome"><strong>Outcome:</strong> Achieved sub-50ms API response time and 40% faster page loads.</div>
+                <ul class="project-tech"><li>PHP</li><li>MySQL</li><li>JavaScript</li><li>Bootstrap</li></ul>
+                <button class="project-details-btn view-modal-btn" data-project="2"><i class="fas fa-arrow-right"></i> View Case Study</button>
+            </div>
+
+            <!-- Project 3: SEO Copywriting -->
+            <div class="project-card gs-reveal" data-category="copywriting" data-tilt>
+                <div class="project-top">
+                    <div class="project-folder"><i class="fas fa-feather-alt"></i></div>
+                    <div class="project-links">
+                        <button class="btn-icon-link view-modal-btn" data-project="3" title="Quick View"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+                <h3 class="project-title">SaaS Conversion Copy &amp; SEO Growth</h3>
+                <div class="project-description">High-converting landing page copy, value proposition structuring, and SEO article series for a digital product launch.</div>
+                <div class="project-outcome"><strong>Outcome:</strong> +65% organic search traffic and +42% user conversion rate.</div>
+                <ul class="project-tech"><li>SEO Strategy</li><li>Conversion Copy</li><li>Brand Messaging</li></ul>
+                <button class="project-details-btn view-modal-btn" data-project="3"><i class="fas fa-arrow-right"></i> View Case Study</button>
+            </div>
+
+            <!-- Project 4: Java OOP System -->
+            <div class="project-card gs-reveal" data-category="database" data-tilt>
+                <div class="project-top">
+                    <div class="project-folder"><i class="fas fa-cube"></i></div>
+                    <div class="project-links">
+                        <button class="btn-icon-link view-modal-btn" data-project="4" title="Quick View"><i class="fas fa-eye"></i></button>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub repo"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3 class="project-title">Java OOP Inventory Management</h3>
+                <div class="project-description">Modular desktop application implementing core Object-Oriented principles, multi-threading, and persistent data storage.</div>
+                <div class="project-outcome"><strong>Outcome:</strong> Clean architecture with reusable classes and zero memory leaks.</div>
+                <ul class="project-tech"><li>Java</li><li>OOP</li><li>Design Patterns</li><li>SQL</li></ul>
+                <button class="project-details-btn view-modal-btn" data-project="4"><i class="fas fa-arrow-right"></i> View Case Study</button>
+            </div>
+
+            <!-- Project 5: SQL Optimization -->
+            <div class="project-card gs-reveal" data-category="database" data-tilt>
+                <div class="project-top">
+                    <div class="project-folder"><i class="fas fa-database"></i></div>
+                    <div class="project-links">
+                        <button class="btn-icon-link view-modal-btn" data-project="5" title="Quick View"><i class="fas fa-eye"></i></button>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub repo"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3 class="project-title">SQL Analytics &amp; Schema Optimizer</h3>
+                <div class="project-description">Database architecture overhaul involving 3NF normalization, indexed queries, and execution plan optimization.</div>
+                <div class="project-outcome"><strong>Outcome:</strong> Reduced query execution time by 60% across 100k+ rows.</div>
+                <ul class="project-tech"><li>MySQL</li><li>PostgreSQL</li><li>Query Tuning</li></ul>
+                <button class="project-details-btn view-modal-btn" data-project="5"><i class="fas fa-arrow-right"></i> View Case Study</button>
+            </div>
+
+            <!-- Project 6: AI Agent RAG Assistant -->
+            <div class="project-card gs-reveal" data-category="ai" data-tilt>
+                <div class="project-top">
+                    <div class="project-folder"><i class="fas fa-network-wired"></i></div>
+                    <div class="project-links">
+                        <button class="btn-icon-link view-modal-btn" data-project="6" title="Quick View"><i class="fas fa-eye"></i></button>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub repo"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3 class="project-title">RAG Knowledge Base Assistant</h3>
+                <div class="project-description">Custom vector search application that parses internal documents and answers complex technical queries accurately.</div>
+                <div class="project-outcome"><strong>Outcome:</strong> 99% factual precision with context-bound answers.</div>
+                <ul class="project-tech"><li>Python</li><li>OpenAI API</li><li>Vector Search</li><li>LangChain</li></ul>
+                <button class="project-details-btn view-modal-btn" data-project="6"><i class="fas fa-arrow-right"></i> View Case Study</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════
+     TESTIMONIALS & REVIEWS
+     ══════════════════════════════════ -->
+<section id="testimonials" class="section testimonials">
+    <div class="container">
+        <p class="section-label gs-reveal">Social Proof &amp; Feedback</p>
+        <h2 class="section-title gs-reveal">Recommendations &amp; Reviews</h2>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card gs-reveal" data-tilt>
+                <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="t-text">"Shahzad demonstrated outstanding technical discipline during his time at Devsinc. His full-stack development skills, clean coding standards, and fast turnaround on complex tasks made him a huge asset."</p>
+                <div class="t-author">
+                    <div class="t-avatar"><i class="fas fa-user-shield"></i></div>
+                    <div class="t-info">
+                        <h4>Engineering Lead</h4>
+                        <p>Devsinc (Private) Limited</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card gs-reveal" data-tilt>
+                <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="t-text">"Finding a developer who understands both clean code AND high-converting copy is incredibly rare. Shahzad restructured our landing page copy and optimized our backend—our conversions skyrocketed!"</p>
+                <div class="t-author">
+                    <div class="t-avatar"><i class="fas fa-user-tie"></i></div>
+                    <div class="t-info">
+                        <h4>Digital Product Manager</h4>
+                        <p>SaaS Solutions Client</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card gs-reveal" data-tilt>
+                <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="t-text">"Shahzad built an intelligent AI workflow integration for our customer support data. His prompt engineering and API design saved us hundreds of hours of manual work."</p>
+                <div class="t-author">
+                    <div class="t-avatar"><i class="fas fa-user-gear"></i></div>
+                    <div class="t-info">
+                        <h4>AI Operations Director</h4>
+                        <p>Global Tech Agency</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════
+     CONTACT
+     ══════════════════════════════════ -->
+<section id="contact" class="section contact">
+    <div class="container">
+        <p class="section-label gs-reveal">Reach out</p>
+        <h2 class="section-title gs-reveal">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-info gs-reveal">
+                <h3 class="contact-heading">Let's Connect</h3>
+                <p class="contact-desc">I'm currently open to new opportunities. Whether you have a question, a project idea, or just want to say hi — I'll get back to you!</p>
+                <div class="contact-details">
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Kot Addu, Punjab, Pakistan</span></div>
+                    <div class="contact-item"><i class="fas fa-phone-alt"></i><span>0307-2005314</span></div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i><span>shehzad686119@gmail.com</span></div>
+                </div>
+                <div class="contact-socials">
+                    <a href="https://www.linkedin.com/in/shahzad-khan-651a12398/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:shehzad686119@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="contact-form-wrapper gs-reveal">
+                <form id="contact-form" class="contact-form" novalidate>
+                    <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required placeholder="John Doe"></div>
+                    <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required placeholder="john@example.com"></div>
+                    <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="5" required placeholder="Hello, I'd like to work with you..."></textarea></div>
+                    <button type="submit" class="btn btn-primary" id="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    <p id="form-status"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════
+     FOOTER
+     ══════════════════════════════════ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>Designed &amp; Built by <a href="#home">Shahzad Khan</a></p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2026 All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ══════════════════════════════════
+     PROJECT DETAIL MODAL
+     ══════════════════════════════════ -->
+<div class="project-modal" id="project-modal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-card">
+        <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal-body" id="modal-body"></div>
+    </div>
+</div>
+
+<!-- GSAP CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
